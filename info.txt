@@ -1,0 +1,12 @@
+#inspired by https://youtu.be/lDkrXTDwbJQ
+#to setup react project
+npm i babel webpack webpack-dev-server -g
+npm init
+npm i react react-dom --save 
+npm i babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+
+index.html - web page
+main.js - app entry point
+dashboard.js main component
+
+
