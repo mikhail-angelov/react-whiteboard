@@ -2,7 +2,7 @@ module.exports = {
 	entry: './main.js',
 	output: {
 		path: './',
-		filename: 'index.js'
+		filename: 'dist/index.js'
 	},
 	devServer:{
 		port:4000,

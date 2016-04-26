@@ -1,14 +1,15 @@
 {
   "name": "react-board",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Whiteboard web app",
+  "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Mikhail Angelov",
+  "license": "MIT",
   "dependencies": {
+    "immutable": "^3.8.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
   },

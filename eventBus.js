@@ -6,7 +6,10 @@ class EventBus{
 			MOVE_PATH: 'movePath',
 			END_PATH: 'endPath',
 			UNDO: 'undo',
-			REDO: 'redo'
+			REDO: 'redo',
+			TOOL_CHANGE: 'toolChange',
+			COLOR_CHANGE: 'cororChange',
+			PICK_VERSION: 'pickVersion'
 		};
 		Object.assign(this, events);
 		this.listeners = {};
@@ -19,10 +22,10 @@ class EventBus{
 	}
 
 	emit(event){
-		console.log(arguments)
+		//console.log(arguments)
 		let callbacks = this.listeners[event] || [];
 		callbacks.forEach(callback=>{
-			callback.apply(arguments);
+			callback.apply({}, arguments);
 		});
 	}
 	
