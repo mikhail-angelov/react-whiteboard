@@ -1,3 +1,5 @@
+import { MOVE } from "./store";
+
 class EventBus{
 
 	constructor(){
