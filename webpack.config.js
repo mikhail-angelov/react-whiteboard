@@ -1,7 +1,7 @@
 module.exports = {
 	entry: './main.js',
 	output: {
-		path: './',
+		path: '/',
 		filename: 'dist/index.js'
 	},
 	devServer:{
@@ -13,7 +13,7 @@ module.exports = {
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel',
+			loader: 'babel-loader',
 			query: {
 				presets: ['es2015', 'react']
 			}
