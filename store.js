@@ -1,9 +1,15 @@
 import Immutable from 'immutable';
 import EventBus from './eventBus'
-import ToolStore from './toolStore';
+import ToolStore, { POINTER, PEN, LINE, ELLIPSE, RECT } from './toolStore';
 import Line from './components/shapes/line';
+import Pen from './components/shapes/Pen';
 import Rect from './components/shapes/rect';
 import Ellipse from './components/shapes/ellipse';
+
+export const SELECT = 'Select'
+export const DRAW ='Draw'
+export const MOVE ='Move'
+export const RESIZE = 'Resize'
 
 class Store{
 
@@ -29,9 +35,10 @@ class Store{
 		ToolStore.subscribe(()=>{
 			let tool = ToolStore.tool;
 			let map = {
-				line: Line,
-				rect: Rect,
-				ellipse: Ellipse
+				LINE: Line,
+				RECT: Rect,
+				ELLIPSE: Ellipse,
+				PEN: Pen
 			}
 			this.tool = map[tool] || Line;
 			this.color = ToolStore.color;
