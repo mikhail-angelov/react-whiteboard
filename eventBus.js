@@ -9,7 +9,8 @@ class EventBus{
 			REDO: 'redo',
 			TOOL_CHANGE: 'toolChange',
 			COLOR_CHANGE: 'cororChange',
-			PICK_VERSION: 'pickVersion'
+			PICK_VERSION: 'pickVersion',
+			MOVE: 'move'
 		};
 		Object.assign(this, events);
 		this.listeners = {};
