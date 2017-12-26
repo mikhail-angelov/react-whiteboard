@@ -1,7 +1,7 @@
 module.exports = {
 	entry: './main.js',
 	output: {
-		path: './',
+		path: __dirname,
 		filename: 'dist/index.js'
 	},
 	devServer:{
@@ -15,7 +15,7 @@ module.exports = {
 			exclude: /node_modules/,
 			loader: 'babel-loader',
 			query: {
-				presets: ['stage-2', 'react']
+				presets: ['stage-2', 'react', 'es2015']
 			},
 			
 		}]
