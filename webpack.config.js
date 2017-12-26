@@ -8,15 +8,16 @@ module.exports = {
 		port:4000,
 		inline: true
 	},
+	devtool: 'inline-source-map',
 	module:{
-		loaders: [
-		{
+		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel',
+			loader: 'babel-loader',
 			query: {
-				presets: ['es2015', 'react']
-			}
+				presets: ['stage-2', 'react']
+			},
+			
 		}]
 	}
 }
