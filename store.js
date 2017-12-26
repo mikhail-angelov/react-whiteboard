@@ -73,10 +73,10 @@ class Store {
 	}
 	endPath(event, position) {
 		if (this.data.mouseTracker) {
+			this.data.mouseTracker.path.push(position);
 			if (this.toolType === POINTER) {
-				this.processPointEvent(this.data.mouseTracker)
+				this.addVersion()
 			} else if(this.data.mouseTracker.class) {
-				this.data.mouseTracker.path.push(position);
 				this.addShapeToCanvas(this.data.mouseTracker)
 			}
 			this.data.mouseTracker = null;
@@ -84,11 +84,9 @@ class Store {
 		}
 	}
 	addShapeToCanvas(shape) {
-		this.data.shapes = this.data.shapes.push(shape);
-		this.data.mouseTracker = null;
-		this._catHistory();
-		this.history.push(this.data.shapes);
-		this.historyIndex = -1;
+		this.data.shapes = this.data.shapes.push(shape)
+		this.data.mouseTracker = null
+		this.addVersion()
 	}
 	selectShape(position) {
 		this.data.shapes = this.data.shapes.map(shape => {
@@ -99,8 +97,10 @@ class Store {
 			}
 		})
 	}
-	processPointEvent(mouseTracker) {
-
+	addVersion(){
+		this._catHistory();
+		this.history.push(this.data.shapes);
+		this.historyIndex = -1;
 	}
 
 	undo() {
